@@ -1,0 +1,7 @@
+name: website
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - nodejs
+  - make
