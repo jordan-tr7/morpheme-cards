@@ -4,3 +4,7 @@ environment:
 
 go:
 	cd morpheme-cards && npm run dev
+
+
+parse_pdfs: 
+	python parse_pdfs.py
