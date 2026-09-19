@@ -7,4 +7,4 @@ go:
 
 
 parse_pdfs: 
-	python parse_pdfs.py
+	python3 parse_pdfs.py
