@@ -8,3 +8,6 @@ go:
 
 parse_pdfs: 
 	python3 parse_pdfs.py
+
+update_json:
+	python3 update_card_json.py
