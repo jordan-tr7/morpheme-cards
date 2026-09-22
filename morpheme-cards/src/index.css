@@ -1,111 +1,209 @@
-:root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
-
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
-
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
-
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
-}
-
-body {
+/* Global reset — belongs in your app's top-level stylesheet (e.g. index.css),
+   not really specific to this component. Included here for convenience. */
+html, body, #root {
   margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
 }
 
-#root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
+*, *::before, *::after {
   box-sizing: border-box;
 }
 
-h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
+.app {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  font-family: 'Andika', sans-serif;
+  background: #FAF6ED;
+  color: #2A2A2A;
+  overflow: hidden;
 }
 
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
+/* ---- Left panel ---- */
+.sidebar {
+  width: 280px;
+  flex-shrink: 0;
+  background: #FFFFFF;
+  border-right: 3px solid #EFE8D8;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
+
+.header {
+  padding: 20px 20px 16px;
+  border-bottom: 3px solid #EFE8D8;
 }
-p {
+
+.logo-mark {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: #FFD166;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.title {
+  font-size: 22px;
   margin: 0;
+  font-weight: 700;
 }
 
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
+.subtitle {
+  margin: 4px 0 0;
+  font-size: 14px;
+  color: #6B6B6B;
 }
 
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
+.tray-scroll {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 20px;
+}
+
+.tray-group {
+  margin-bottom: 22px;
+}
+
+.group-label {
+  font-size: 13px;
+  font-weight: 700;
+  margin: 0 0 8px;
+}
+
+.tray-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.card {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 2px solid;
+  background: #FFFFFF;
+  font-size: 17px;
+  font-weight: 700;
+  cursor: grab;
+  user-select: none;
+  touch-action: none;
+}
+
+/* ---- Right panel ---- */
+.board {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-width: 0;
+}
+
+.zoom-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-bottom: 3px solid #EFE8D8;
+  background: #FFFFFF;
+  flex-shrink: 0;
+}
+
+.zoom-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: 2px solid #2B6777;
+  background: #FFFFFF;
+  color: #2B6777;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.reset-btn {
+  margin-left: 8px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 2px solid #D8D0BC;
+  background: #FFFFFF;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  color: #6B6B6B;
+}
+
+.zoom-label {
+  font-size: 14px;
+  font-weight: 700;
+  width: 44px;
+  text-align: center;
+}
+
+.hint {
+  margin-left: 12px;
+  font-size: 12px;
+  color: #9A9280;
+}
+
+.viewport {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+  touch-action: none;
+  background-color: #FAF6ED;
+  background-image:
+    linear-gradient(0deg, #F1ECDD 0, #F1ECDD 1px, transparent 1px, transparent 100%),
+    linear-gradient(90deg, #F1ECDD 0, #F1ECDD 1px, transparent 1px, transparent 100%);
+}
+
+.canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: top left;
+}
+
+.empty-hint {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  font-size: 20px;
+  color: #B5AD98;
+  font-weight: 700;
+}
+
+.placed-card {
+  position: absolute;
+  padding: 12px 18px;
+  border-radius: 12px;
+  border: 3px solid;
+  background: #FFFFFF;
+  font-size: 22px;
+  font-weight: 700;
+  cursor: grab;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.08);
+  user-select: none;
+  touch-action: none;
+}
+
+.ghost {
+  position: fixed;
+  z-index: 1000;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  padding: 12px 18px;
+  border-radius: 12px;
+  border: 3px solid;
+  background: #FFFFFF;
+  font-size: 20px;
+  font-weight: 700;
+  opacity: 0.9;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
