@@ -40,6 +40,18 @@ def add_word_type(data):
         else:
             item["word_type"] = "ERROR"
 
+def add_word_origin(data):
+    for item in data:
+        origin = item.get("origin", "").lower()
+        if "anglo" in origin:
+            item["word_origin"] = "Anglo-Saxon"
+        elif "latin" in origin:
+            item["word_origin"] = "Latin"
+        elif "greek" in origin:
+            item["word_origin"] = "Greek"
+        else:
+            item["word_origin"] = "ERROR"
+
 def main():
     print(f"\nReading File: {INPUT_FILE}\n")
 
@@ -56,6 +68,7 @@ def main():
     add_label_flags(data)
     add_lesson_unit_data(data)
     add_word_type(data)
+    add_word_origin(data)
     
     types = []
     for item in data:

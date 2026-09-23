@@ -1,27 +1,40 @@
 import { useState, useRef, useCallback } from 'react'
 
+import MORPHEMES from './data/updated_cards.json'
+
+
+const WORD_TYPES = [
+  "prefix", "root", "base", "suffix"
+]
 
 // ---- Sample data — swap in your real morpheme set ----
-const MORPHEMES = [
-  { id: 'un', text: 'un', type: 'prefix' },
-  { id: 're', text: 're', type: 'prefix' },
-  { id: 'pre', text: 'pre', type: 'prefix' },
-  { id: 'dis', text: 'dis', type: 'prefix' },
-  { id: 'help', text: 'help', type: 'root' },
-  { id: 'play', text: 'play', type: 'root' },
-  { id: 'read', text: 'read', type: 'root' },
-  { id: 'view', text: 'view', type: 'root' },
-  { id: 'ful', text: 'ful', type: 'suffix' },
-  { id: 'less', text: 'less', type: 'suffix' },
-  { id: 'ing', text: 'ing', type: 'suffix' },
-  { id: 'able', text: 'able', type: 'suffix' },
-];
+// const MORPHEMES = [
+//   { id: 'un', text: 'un', type: 'prefix' },
+//   { id: 're', text: 're', type: 'prefix' },
+//   { id: 'pre', text: 'pre', type: 'prefix' },
+//   { id: 'dis', text: 'dis', type: 'prefix' },
+//   { id: 'help', text: 'help', type: 'root' },
+//   { id: 'play', text: 'play', type: 'root' },
+//   { id: 'read', text: 'read', type: 'root' },
+//   { id: 'view', text: 'view', type: 'root' },
+//   { id: 'ful', text: 'ful', type: 'suffix' },
+//   { id: 'less', text: 'less', type: 'suffix' },
+//   { id: 'ing', text: 'ing', type: 'suffix' },
+//   { id: 'able', text: 'able', type: 'suffix' },
+// ];
  
 const TYPE_COLOR = {
-  prefix: '#2B6777',
-  root: '#C1543C',
-  suffix: '#3C7A5C',
+  'prefix': '#000',
+  'root': '#000',
+  'base': '#000',
+  'suffix': '#000',
 };
+
+const ORIGIN_COLOR = {
+  'Anglo-Saxon': '#429c21',
+  'Latin': '#ff1c4d', 
+  'Greek': '#000080'
+}
  
 const CANVAS_W = 1600;
 const CANVAS_H = 1200;
@@ -80,6 +93,7 @@ function App() {
   const resetView = () => {
     setZoom(1);
     setPan({ x: 0, y: 0 });
+    console.log(MORPHEMES);
   };
  
   // ---------- panning the board: press-drag on empty space, mouse or touch ----------
@@ -177,10 +191,17 @@ function App() {
           e.clientX >= rect.left && e.clientX <= rect.right &&
           e.clientY >= rect.top && e.clientY <= rect.bottom;
         if (overBoard) {
-          const { id, text, type } = g.payload;
+          const { page_front, page_back, row, front_col,
+                  is_card, morpheme, unit_label, color, definition,
+                  origin, note, index, front_has_icon, back_has_icon, icon_types,
+                  level, unit, word_type, word_origin
+                } = g.payload;
           setDropped((prev) => [
             ...prev,
-            { dropId: nextDropId++, id, text, type, x: world.x - 45, y: world.y - 26 },
+            { dropId: nextDropId++, morpheme, morpheme, word_type, x: world.x - 45, y: world.y - 26, page_front, page_back, 
+              row, front_col, is_card, unit_label, color, definition, origin, note, index, front_has_icon, back_has_icon, icon_types,
+              level, unit, word_origin
+             },
           ]);
         }
       }
@@ -205,23 +226,23 @@ function App() {
         </header>
  
         <div className="tray-scroll">
-          {['prefix', 'root', 'suffix'].map((group) => (
+          {WORD_TYPES.map((group) => (
             <div key={group} className="tray-group">
               <p className="group-label" style={{ color: TYPE_COLOR[group] }}>
-                {group === 'prefix' ? 'Starts' : group === 'root' ? 'Main words' : 'Endings'}
+                {group === 'prefix' ? 'Prefixes' : group === 'root' ? 'Root Words' : group === 'base' ? 'Base Words' : 'Suffixes'}
               </p>
               <div className="tray-grid">
-                {MORPHEMES.filter((m) => m.type === group).map((m) => (
+                {MORPHEMES.filter((m) => m.word_type === group).map((m) => (
                   <div
-                    key={m.id}
+                    key={m.index}
                     data-card
                     className="card"
                     onPointerDown={(e) => beginCardPointer(e, { source: 'tray', ...m })}
                     onPointerMove={onCardPointerMove}
                     onPointerUp={onCardPointerUp}
-                    style={{ borderColor: TYPE_COLOR[m.type] }}
+                    style={{ borderColor: TYPE_COLOR[m.word_type], color: ORIGIN_COLOR[m.word_origin]}} // TODO: update here
                   >
-                    {m.text}
+                    {m.morpheme}
                   </div>
                 ))}
               </div>
@@ -276,11 +297,13 @@ function App() {
                 style={{
                   left: card.x,
                   top: card.y,
-                  borderColor: TYPE_COLOR[card.type],
+                  borderColor: TYPE_COLOR[card.word_type],
+                  color: ORIGIN_COLOR[card.word_origin]
                 }}
                 title="Double-click (or hold on touch) to remove"
               >
-                {card.text}
+                {card.morpheme}
+                {card.definition}
               </div>
             ))}
           </div>
@@ -291,9 +314,9 @@ function App() {
       {ghost && (
         <div
           className="ghost"
-          style={{ left: ghost.clientX, top: ghost.clientY, borderColor: TYPE_COLOR[ghost.type] }}
+          style={{ left: ghost.clientX, top: ghost.clientY, borderColor: TYPE_COLOR[ghost.word_type],color: ORIGIN_COLOR[ghost.word_origin] }}
         >
-          {ghost.text}
+          {ghost.morpheme}
         </div>
       )}
     </div>
