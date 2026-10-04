@@ -6,6 +6,7 @@ Script to add icon flag to JSON and keep only active card types
 import json 
 
 INPUT_FILE = "files/outputs/output.json"
+INPUT_LESSONS = "files/outputs/lessons_output.json"
 
 
 def add_label_flags(data):
@@ -52,11 +53,27 @@ def add_word_origin(data):
         else:
             item["word_origin"] = "ERROR"
 
+def add_lessons(data, lessons):
+    for item in data:
+        item['Lesson'] = []
+        item['Lesson'].append("All")
+        for lesson in lessons:
+            words = lessons[lesson]
+            for word in words:
+                if word == item.get("morpheme", "").lower():
+                    item['Lesson'].append(lesson)
+                    break
+                
+        
+
 def main():
     print(f"\nReading File: {INPUT_FILE}\n")
 
     with open(INPUT_FILE, 'r') as file:
         data = json.load(file)
+        
+    with open(INPUT_LESSONS, 'r') as file:
+        lessons = json.load(file)
     
     print(f"Data is type: {type(data)}")
     print(f"JSON contains {len(data)} items.")
@@ -69,6 +86,7 @@ def main():
     add_lesson_unit_data(data)
     add_word_type(data)
     add_word_origin(data)
+    add_lessons(data, lessons)
     
     types = []
     for item in data:

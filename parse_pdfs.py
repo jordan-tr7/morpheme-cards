@@ -222,11 +222,8 @@ def render_cell_image(pdf_path, page_number, x0, x1, top, bottom, out_path, dpi=
  
  
 def main():
-    #if len(sys.argv) != 3:
-       # print("Usage: python parse_morpheme_cards.py input.pdf output.json")
-       # sys.exit(1)
  
-    cards = extract_cards(INPUT_FILE_PATH) #sys.argv[1]
+    cards = extract_cards(INPUT_FILE_PATH) 
     with open(OUTPUT_FILE_PATH, "w") as f:
         json.dump(cards, f, indent=2)
  
