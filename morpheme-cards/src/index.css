@@ -58,6 +58,11 @@ html, body, #root {
   cursor: pointer;
 }
 
+.logout-btn:hover {
+  border: 2px solid #353535;;
+  color: #353535;;
+}
+
 .login-form {
   flex: 1;
   display: flex;
@@ -264,12 +269,35 @@ html, body, #root {
   margin-left: 8px;
   padding: 6px 12px;
   border-radius: 8px;
-  border: 2px solid #D8D0BC;
+  /* border: 2px solid #D8D0BC; #D8D0BC */
+  border: 2px solid #000080;
   background: #FFFFFF;
   font-size: 13px;
   font-weight: 700;
   cursor: pointer;
   color: #6B6B6B;
+}
+
+.reset-btn:hover {
+  border: 2px solid #000080;;
+  color: #353535;
+}
+
+.delete-btn {
+  margin-left: 8px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 2px solid #ff1c4d;
+  background: #FFFFFF;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  color: #6B6B6B;
+}
+
+.delete-btn:hover {
+  border: 2px solid #ff1c4d;
+  color: #353535;
 }
 
 .zoom-label {
@@ -281,8 +309,8 @@ html, body, #root {
 
 .hint {
   margin-left: 12px;
-  font-size: 12px;
-  color: #9A9280;
+  font-size: 14px;
+  color: #6B6B6B;
 }
 
 .viewport {
@@ -449,7 +477,7 @@ html, body, #root {
   z-index: 1;
 }
 
-.ghost {
+/* .ghost {
   position: fixed;
   z-index: 1000;
   pointer-events: none;
@@ -461,5 +489,22 @@ html, body, #root {
   font-size: 20px;
   font-weight: 700;
   opacity: 0.9;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+} */
+
+.ghost {
+  position: fixed;
+  z-index: 1000;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  border: 3px solid;
+  background: #FFFFFF;
+  font-size: 20px;
+  font-weight: 700;
+  opacity: 0.85;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }

@@ -58,7 +58,7 @@ def add_lessons(data, lessons):
         item['Lesson'] = []
         item['Lesson'].append("All")
         for lesson in lessons:
-            words = lessons[lesson]
+            words = lessons[lesson]["all"]
             for word in words:
                 if word == item.get("morpheme", "").lower():
                     item['Lesson'].append(lesson)

@@ -140,6 +140,12 @@ function App() {
     };
   }, [pan, zoom]);
  
+  const isOverBoard = (clientX, clientY) => {
+    const rect = viewportRef.current.getBoundingClientRect();
+    return clientX >= rect.left && clientX <= rect.right &&
+           clientY >= rect.top && clientY <= rect.bottom;
+  }
+
   // No pan clamping — the board is meant to feel like an infinite whiteboard,
   // so you can drag away from the content in any direction indefinitely.
  
@@ -161,9 +167,14 @@ function App() {
   const resetView = () => {
     setZoom(1);
     setPan({ x: 0, y: 0 });
-    console.log(MORPHEMES);
   };
  
+  const deleteMorphemes = () => {
+    if (window.confirm('Remove all cards from the board?')) {
+      setDropped([]);
+    }
+  }
+
   // ---------- panning the board: press-drag on empty space, mouse or touch ----------
   const onViewportPointerDown = (e) => {
     if (e.target.closest('[data-card]')) return; // let the card handle it instead
@@ -244,6 +255,15 @@ function App() {
  
     if (g.payload.source === 'tray') {
       setGhost({ ...g.payload, clientX: e.clientX, clientY: e.clientY });
+
+      if (isOverBoard(e.clientX, e.clientY)) {
+        const world = screenToWorld(e.clientX, e.clientY);
+        const ghostCard = { x: world.x - CARD_W / 2, y: world.y - CARD_H / 2 };
+        setSnapTarget(computeSnapTarget([ghostCard], dropped));
+      } else {
+        setSnapTarget(null);
+      }
+      return;
     } 
 
     const world = screenToWorld(e.clientX, e.clientY);
@@ -274,27 +294,75 @@ function App() {
     cardGesture.current = null;
  
     if (g.payload.source === 'tray') {
-      if (g.moved) {
+
+      if (g.moved && isOverBoard(e.clientX, e.clientY)) {
         const world = screenToWorld(e.clientX, e.clientY);
-        const rect = viewportRef.current.getBoundingClientRect();
-        const overBoard =
-          e.clientX >= rect.left && e.clientX <= rect.right &&
-          e.clientY >= rect.top && e.clientY <= rect.bottom;
-        if (overBoard) {
-          const { page_front, page_back, row, front_col,
+        const { page_front, page_back, row, front_col,
                   is_card, morpheme, unit_label, color, definition,
                   origin, note, index, front_has_icon, back_has_icon, icon_types,
                   level, unit, word_type, word_origin
                 } = g.payload;
-          setDropped((prev) => [
-            ...prev,
-            { dropId: nextDropId++, morpheme, word_type, x: world.x - 45, y: world.y - 26, page_front, page_back, 
-              row, front_col, is_card, unit_label, color, definition, origin, note, index, front_has_icon, back_has_icon, icon_types,
-              level, unit, word_origin, flipped: false, snapLeft: null, snapRight: null
-             },
-          ]);
+        
+        let x = world.x - CARD_W / 2;
+        let y = world.y - CARD_H / 2;
+        let snapLeft = null;
+        let snapRight = null; 
+        const newId = nextDropId++;
+
+        if (snapTarget) {
+          const target = dropped.find((c) => c.dropId === snapTarget.targetId);
+          y = target.y;
+          if (snapTarget.chainEdge === 'right') {
+            x = target.x - CARD_W;
+            snapRight = target.dropId;
+          } else {
+            x = target.x + CARD_W;
+            snapLeft = target.dropId;
+          }
         }
+
+        setDropped((prev) => {
+          const withNewCard = [
+            ...prev,
+            { dropId: newId, morpheme, word_type, x, y, page_front, page_back,
+          row, front_col, is_card, unit_label, color, definition, origin, note, index,
+          front_has_icon, back_has_icon, icon_types, level, unit, word_origin,
+          flipped: false, snapLeft, snapRight },
+          ];
+        if (!snapTarget) return withNewCard;
+
+        // tell tgt card now connected with new card too
+        return withNewCard.map((c) => 
+          c.dropId === snapTarget.targetId  
+            ? snapTarget.chainEdge === 'right'
+            ? { ...c, snapLeft: newId }
+            : { ...c, snapRight: newId}
+            : c
+          );
+        });
       }
+
+      // if (g.moved) {
+      //   const world = screenToWorld(e.clientX, e.clientY);
+      //   const rect = viewportRef.current.getBoundingClientRect();
+      //   const overBoard =
+      //     e.clientX >= rect.left && e.clientX <= rect.right &&
+      //     e.clientY >= rect.top && e.clientY <= rect.bottom;
+      //   if (overBoard) {
+      //     const { page_front, page_back, row, front_col,
+      //             is_card, morpheme, unit_label, color, definition,
+      //             origin, note, index, front_has_icon, back_has_icon, icon_types,
+      //             level, unit, word_type, word_origin
+      //           } = g.payload;
+      //     setDropped((prev) => [
+      //       ...prev,
+      //       { dropId: nextDropId++, morpheme, word_type, x: world.x - 45, y: world.y - 26, page_front, page_back, 
+      //         row, front_col, is_card, unit_label, color, definition, origin, note, index, front_has_icon, back_has_icon, icon_types,
+      //         level, unit, word_origin, flipped: false, snapLeft: null, snapRight: null
+      //        },
+      //     ]);
+      //   }
+      // }
       setGhost(null);
     } else if (snapTarget) {
       applySnap(g.payload.dropId, snapTarget);
@@ -477,8 +545,9 @@ function App() {
           <button className="zoom-btn" onClick={() => zoomAtCenter(1 / 1.2)}>−</button>
           <span className="zoom-label">{Math.round(zoom * 100)}%</span>
           <button className="zoom-btn" onClick={() => zoomAtCenter(1.2)}>+</button>
-          <button className="reset-btn" onClick={resetView}>Reset</button>
-          <span className="hint">Drag empty space to move around · double click a card to remove it</span>
+          <button className="reset-btn" onClick={resetView}>Reset Grid Position</button>
+          <button className='delete-btn' onClick={deleteMorphemes}>Delete All Cards</button>
+          <span className="hint">Double click a card to remove it</span>
         </div>
  
         <div
@@ -569,7 +638,7 @@ function App() {
       {ghost && (
         <div
           className="ghost"
-          style={{ left: ghost.clientX, top: ghost.clientY, borderColor: TYPE_COLOR[ghost.word_type],color: ORIGIN_COLOR[ghost.word_origin] }}
+          style={{ left: ghost.clientX, top: ghost.clientY, borderColor: TYPE_COLOR[ghost.word_type],color: ORIGIN_COLOR[ghost.word_origin], width: CARD_W, height: CARD_H }}
         >
           {ghost.morpheme}
         </div>
