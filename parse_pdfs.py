@@ -11,9 +11,12 @@ from collections import defaultdict
 import pdfplumber
 
 
-INPUT_FILE_PATH = "files/inputs/Level-1-Unit-1-printable-Morpheme-tiles.pdf"
-OUTPUT_FILE_PATH = "files/outputs/output.json"
+INPUT_FILES = [
+    "files/inputs/Level-1-Unit-1-printable-Morpheme-tiles.pdf",
+    "files/inputs/Unit-2-Morpheme-Tiles.pdf"
+]
 
+OUTPUT_FILE_PATH = "files/outputs/output.json"
 
 def cmyk_to_hex(color):
     """
@@ -151,8 +154,7 @@ def parse_back_cell(page, all_words, x0, x1, top, bottom):
     return cell
  
 
-def extract_cards(pdf_path):
-    cards = []
+def extract_cards(pdf_path, cards):
     with pdfplumber.open(pdf_path) as pdf:
         pages = pdf.pages
         for i in range(0, len(pages) - 1, 2):
@@ -223,7 +225,11 @@ def render_cell_image(pdf_path, page_number, x0, x1, top, bottom, out_path, dpi=
  
 def main():
  
-    cards = extract_cards(INPUT_FILE_PATH) 
+    cards = []
+
+    for f in INPUT_FILES:
+        cards = extract_cards(f, cards) 
+
     with open(OUTPUT_FILE_PATH, "w") as f:
         json.dump(cards, f, indent=2)
  

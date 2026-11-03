@@ -1,27 +1,65 @@
 import { useState, useRef, useCallback } from 'react'
 import LoginForm from './LoginForm';
 import MORPHEMES from './data/updated_cards.json'
+import LESSONS_DATA from './data/lessons_output.json'
 
 
-const LEVELS = [...new Set(MORPHEMES.map((m) => m.level))].sort();
-const UNITS_BY_LEVEL = LEVELS.reduce((acc, level) => {
-  acc[level] = [... new Set(
-    MORPHEMES.filter((m) => m.level === level).map((m) => m.unit)
-  )].sort();
+const byNumber = (a, b) => {
+  const numA = parseInt(a.match(/\d+/)?.[0] ?? '0', 10);
+  const numB = parseInt(b.match(/\d+/)?.[0] ?? '0', 10);
+  return numA - numB;
+};
+
+//const LEVELS = [...new Set(MORPHEMES.map((m) => m.level))].sort();
+const LEVELS = [...new Set(LESSONS_DATA.Units.map((u) => `L${u.Level}`))].sort(byNumber);
+
+const UNITS_BY_LEVEL = LEVELS.reduce((acc, levelKey) => {
+  const levelNum = Number(levelKey.slice(1));
+  acc[levelKey] = [...new Set(
+    LESSONS_DATA.Units
+      .filter((u) => u.Level === levelNum)
+      .map((u) => `U${u.Unit}`)
+  )].sort(byNumber);
   return acc;
 }, {});
 
-const getLessons = (m) => m.Lesson ?? ['All'];
+// e.g. ['L1']['U1'] -> ['Week 1 - Lesson 3', ...]
+const LESSONS_BY_LEVEL_UNIT = {};
 
-const LESSONS = (() => {
-  const set = new Set();
-  MORPHEMES.forEach((m) => getLessons(m).forEach((lesson) => set.add(lesson)));
-  const rest = [...set].filter((l) => l !== 'All').sort();
-  return ['All', ...rest];
-})();
+// e.g. ['L1']['U1']['Week 1 - Lesson 3'] -> set of morpheme IDs
+const LESSON_MORPHEME_IDS = {};
+
+LESSONS_DATA.Units.forEach((u) => {
+  const levelKey = `L${u.Level}`;
+  const unitKey = `U${u.Unit}`;
+
+  LESSONS_BY_LEVEL_UNIT[levelKey] = LESSONS_BY_LEVEL_UNIT[levelKey] || {};
+  LESSONS_BY_LEVEL_UNIT[levelKey][unitKey] = Object.keys(u.Lessons).sort(byNumber);
+
+  LESSON_MORPHEME_IDS[levelKey] = LESSON_MORPHEME_IDS[levelKey] || {};
+  LESSON_MORPHEME_IDS[levelKey][unitKey] = {};
+  
+  Object.entries(u.Lessons).forEach(([lessonName, lessonData]) => {
+    LESSON_MORPHEME_IDS[levelKey][unitKey][lessonName] = new Set(
+      lessonData.all.map((entry) => entry.id)
+    );
+  });
+});
+
+
+
+//TODO: change how lessons are gotten
+//const getLessons = (m) => m.Lesson ?? ['All'];
+
+// const LESSONS = (() => {
+//   const set = new Set();
+//   MORPHEMES.forEach((m) => getLessons(m).forEach((lesson) => set.add(lesson)));
+//   const rest = [...set].filter((l) => l !== 'All').sort();
+//   return ['All', ...rest];
+// })();
 
 const WORD_TYPES = [
-  "prefix", "root", "base", "suffix"
+  "prefix", "root", "base", "combining form", "suffix"
 ]
  
 const TYPE_COLOR = {
@@ -107,7 +145,9 @@ function App() {
  
   const [selectedLevel, setSelectedLevel] = useState(LEVELS[0]);
   const [selectedUnit, setSelectedUnit] = useState(UNITS_BY_LEVEL[LEVELS[0]][0]);
-  const [selectedLesson, setSelectedLesson] = useState('All');
+  const [selectedLesson, setSelectedLesson] = useState(
+    LESSONS_BY_LEVEL_UNIT[LEVELS[0]][UNITS_BY_LEVEL[LEVELS[0]][0]][0]
+  );
 
   const [snapTarget, setSnapTarget] = useState(null);
 
@@ -117,8 +157,16 @@ function App() {
 
   const handleLevelChange = (e) => {
     const level = e.target.value;
+    const firstUnit = UNITS_BY_LEVEL[level][0];
     setSelectedLevel(level);
-    setSelectedUnit(UNITS_BY_LEVEL[level][0]);
+    setSelectedUnit(firstUnit);
+    setSelectedLessons(LESSONS_BY_LEVEL_UNIT[level][firstUnit][0]);
+  }
+
+  const handleUnitChange = (e) => {
+    const unit = e.target.value;
+    setSelectedUnit(unit);
+    setSelectedLesson(LESSONS_BY_LEVEL_UNIT[selectedLevel][unit][0]);
   }
 
   const handleLogin = () => {
@@ -458,7 +506,7 @@ function App() {
 
           <label className="filter-label">
             Unit
-            <select value={selectedUnit} onChange={(e) => setSelectedUnit(e.target.value)}>
+            <select value={selectedUnit} onChange={handleUnitChange}>
               {UNITS_BY_LEVEL[selectedLevel].map((unit) => (
                 <option key={unit} value={unit}>{unit}</option>
               ))}
@@ -468,7 +516,7 @@ function App() {
           <label className="filter-label">
             Lesson
             <select value={selectedLesson} onChange={(e) => setSelectedLesson(e.target.value)}>
-              {LESSONS.map((lesson) => (
+              {LESSONS_BY_LEVEL_UNIT[selectedLevel][selectedUnit].map((lesson) => (
                 <option key={lesson} value={lesson}>{lesson}</option>
               ))}
             </select>
@@ -507,13 +555,15 @@ function App() {
           {WORD_TYPES.map((group) => (
             <div key={group} className="tray-group">
               <p className="group-label" style={{ color: TYPE_COLOR[group] }}>
-                {group === 'prefix' ? 'Prefixes' : group === 'root' ? 'Root Words' : group === 'base' ? 'Base Words' : 'Suffixes'}
+                {group === 'prefix' ? 'Prefixes' : group === 'root' ? 'Root Words' : group === 'base' ? 'Base Words' : group === 'combining form' ? 'Combining Form' : 'Suffixes'}
               </p>
               <div className="tray-grid">
                 {MORPHEMES.filter((m) => m.word_type === group &&
-                                         m.level === selectedLevel && 
-                                         m.unit === selectedUnit &&
-                                         getLessons(m).includes(selectedLesson)
+                                        LESSON_MORPHEME_IDS[selectedLevel][selectedUnit][selectedLesson].has(m.index)
+                                        //getLessons(m).includes(selectedLesson) &&
+                                        //  m.level === selectedLevel && 
+                                        //  m.unit === selectedUnit &&
+                                        //  getLessons(m).includes(selectedLesson)
                                   ).map((m) => (
                   <div
                     key={m.index}

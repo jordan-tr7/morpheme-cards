@@ -38,6 +38,8 @@ def add_word_type(data):
             item["word_type"] = "base"
         elif "root" in origin:
             item["word_type"] = "root"
+        elif "combin" in origin:
+            item["word_type"] = "combining form"
         else:
             item["word_type"] = "ERROR"
 
@@ -53,16 +55,16 @@ def add_word_origin(data):
         else:
             item["word_origin"] = "ERROR"
 
-def add_lessons(data, lessons):
-    for item in data:
-        item['Lesson'] = []
-        item['Lesson'].append("All")
-        for lesson in lessons:
-            words = lessons[lesson]["all"]
-            for word in words:
-                if word == item.get("morpheme", "").lower():
-                    item['Lesson'].append(lesson)
-                    break
+# def add_lessons(data, lessons):
+#     for item in data:
+#         item['Lesson'] = []
+#         item['Lesson'].append("All")
+#         for lesson in lessons:
+#             words = lessons[lesson]["all"]
+#             for word in words:
+#                 if word == item.get("morpheme", "").lower():
+#                     item['Lesson'].append(lesson)
+#                     break
                 
         
 
@@ -86,7 +88,7 @@ def main():
     add_lesson_unit_data(data)
     add_word_type(data)
     add_word_origin(data)
-    add_lessons(data, lessons)
+    # add_lessons(data, lessons)
     
     types = []
     for item in data:

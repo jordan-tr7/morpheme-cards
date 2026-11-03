@@ -25,8 +25,11 @@
             "Week 2 - Lesson 3",
             "Week 3 - Lesson 3",
             "Week 4 - Lesson 4",
+            "Week 5 - Lesson 4",
             "Week 7 - Lesson 4",
-            "Week 8 - Lesson 4"
+            "Week 8 - Lesson 4",
+            "Week 3 - Lesson 4",
+            "Week 4 - Lesson 3"
         ]
     },
     {
@@ -177,8 +180,12 @@
         "Lesson": [
             "All",
             "Week 1 - Lesson 3",
+            "Week 2 - Lesson 3",
             "Week 5 - Lesson 4",
-            "Week 6 - Lesson 3"
+            "Week 6 - Lesson 3",
+            "Week 7 - Lesson 4",
+            "Week 8 - Lesson 4",
+            "Week 3 - Lesson 4"
         ]
     },
     {
@@ -209,9 +216,13 @@
             "Week 2 - Lesson 3",
             "Week 3 - Lesson 3",
             "Week 4 - Lesson 4",
+            "Week 5 - Lesson 4",
             "Week 6 - Lesson 3",
             "Week 7 - Lesson 4",
-            "Week 8 - Lesson 4"
+            "Week 8 - Lesson 4",
+            "Week 3 - Lesson 4",
+            "Week 4 - Lesson 3",
+            "Week 6 - Lesson 4"
         ]
     },
     {
@@ -265,8 +276,11 @@
             "Week 2 - Lesson 3",
             "Week 3 - Lesson 3",
             "Week 4 - Lesson 4",
+            "Week 5 - Lesson 4",
             "Week 7 - Lesson 4",
-            "Week 8 - Lesson 4"
+            "Week 8 - Lesson 4",
+            "Week 3 - Lesson 4",
+            "Week 4 - Lesson 3"
         ]
     },
     {
@@ -377,7 +391,9 @@
         "Lesson": [
             "All",
             "Week 1 - Lesson 3",
-            "Week 8 - Lesson 4"
+            "Week 7 - Lesson 4",
+            "Week 8 - Lesson 4",
+            "Week 3 - Lesson 4"
         ]
     },
     {
@@ -406,7 +422,9 @@
             "Week 3 - Lesson 3",
             "Week 4 - Lesson 4",
             "Week 5 - Lesson 4",
-            "Week 6 - Lesson 3"
+            "Week 6 - Lesson 3",
+            "Week 7 - Lesson 4",
+            "Week 8 - Lesson 4"
         ]
     },
     {
@@ -460,7 +478,8 @@
             "All",
             "Week 3 - Lesson 3",
             "Week 4 - Lesson 4",
-            "Week 5 - Lesson 4"
+            "Week 5 - Lesson 4",
+            "Week 8 - Lesson 4"
         ]
     },
     {
@@ -572,10 +591,12 @@
         "word_origin": "Latin",
         "Lesson": [
             "All",
+            "Week 2 - Lesson 3",
             "Week 3 - Lesson 3",
             "Week 4 - Lesson 4",
             "Week 5 - Lesson 4",
-            "Week 7 - Lesson 4"
+            "Week 7 - Lesson 4",
+            "Week 8 - Lesson 4"
         ]
     },
     {
@@ -607,7 +628,8 @@
             "Week 4 - Lesson 4",
             "Week 5 - Lesson 4",
             "Week 6 - Lesson 3",
-            "Week 8 - Lesson 4"
+            "Week 8 - Lesson 4",
+            "Week 4 - Lesson 3"
         ]
     },
     {
@@ -632,6 +654,7 @@
         "word_origin": "Latin",
         "Lesson": [
             "All",
+            "Week 2 - Lesson 3",
             "Week 3 - Lesson 3",
             "Week 4 - Lesson 4",
             "Week 5 - Lesson 4"
@@ -742,8 +765,12 @@
         "Lesson": [
             "All",
             "Week 1 - Lesson 3",
+            "Week 2 - Lesson 3",
             "Week 5 - Lesson 4",
-            "Week 6 - Lesson 3"
+            "Week 6 - Lesson 3",
+            "Week 7 - Lesson 4",
+            "Week 8 - Lesson 4",
+            "Week 3 - Lesson 4"
         ]
     },
     {
@@ -770,11 +797,13 @@
         "word_origin": "Latin",
         "Lesson": [
             "All",
+            "Week 2 - Lesson 3",
             "Week 4 - Lesson 4",
             "Week 5 - Lesson 4",
             "Week 6 - Lesson 3",
             "Week 7 - Lesson 4",
-            "Week 8 - Lesson 4"
+            "Week 8 - Lesson 4",
+            "Week 4 - Lesson 3"
         ]
     },
     {
@@ -803,7 +832,9 @@
             "All",
             "Week 5 - Lesson 4",
             "Week 6 - Lesson 3",
-            "Week 7 - Lesson 4"
+            "Week 7 - Lesson 4",
+            "Week 8 - Lesson 4",
+            "Week 4 - Lesson 3"
         ]
     },
     {
@@ -834,7 +865,8 @@
             "Week 5 - Lesson 4",
             "Week 6 - Lesson 3",
             "Week 7 - Lesson 4",
-            "Week 8 - Lesson 4"
+            "Week 8 - Lesson 4",
+            "Week 4 - Lesson 3"
         ]
     },
     {
@@ -885,11 +917,14 @@
         "word_origin": "Anglo-Saxon",
         "Lesson": [
             "All",
+            "Week 1 - Lesson 3",
+            "Week 2 - Lesson 3",
             "Week 4 - Lesson 4",
             "Week 5 - Lesson 4",
             "Week 6 - Lesson 3",
             "Week 7 - Lesson 4",
-            "Week 8 - Lesson 4"
+            "Week 8 - Lesson 4",
+            "Week 4 - Lesson 3"
         ]
     },
     {
@@ -974,7 +1009,8 @@
             "All",
             "Week 6 - Lesson 3",
             "Week 7 - Lesson 4",
-            "Week 8 - Lesson 4"
+            "Week 8 - Lesson 4",
+            "Week 4 - Lesson 3"
         ]
     },
     {
@@ -1027,6 +1063,8 @@
         "word_origin": "Latin",
         "Lesson": [
             "All",
+            "Week 1 - Lesson 3",
+            "Week 5 - Lesson 4",
             "Week 7 - Lesson 4",
             "Week 8 - Lesson 4"
         ]
@@ -1110,7 +1148,8 @@
         "word_type": "prefix",
         "word_origin": "Latin",
         "Lesson": [
-            "All"
+            "All",
+            "Week 2 - Lesson 3"
         ]
     },
     {
@@ -1162,6 +1201,7 @@
         "word_origin": "Latin",
         "Lesson": [
             "All",
+            "Week 5 - Lesson 4",
             "Week 7 - Lesson 4",
             "Week 8 - Lesson 4"
         ]
@@ -1270,6 +1310,8 @@
         "word_origin": "Latin",
         "Lesson": [
             "All",
+            "Week 2 - Lesson 3",
+            "Week 5 - Lesson 4",
             "Week 7 - Lesson 4",
             "Week 8 - Lesson 4"
         ]
@@ -1298,7 +1340,952 @@
         "word_origin": "Latin",
         "Lesson": [
             "All",
+            "Week 1 - Lesson 3",
             "Week 8 - Lesson 4"
+        ]
+    },
+    {
+        "page_front": 1,
+        "page_back": 2,
+        "row": 0,
+        "front_col": 1,
+        "is_card": true,
+        "morpheme": "vise",
+        "unit_label": "L1 U2",
+        "color": "#ff1c4d",
+        "definition": "to see",
+        "origin": "Latin root",
+        "note": "alternate form of vis, vid, vid(e)",
+        "index": 53,
+        "front_has_icon": true,
+        "back_has_icon": true,
+        "icon_types": [
+            "alternate"
+        ],
+        "level": "L1",
+        "unit": "U2",
+        "word_type": "root",
+        "word_origin": "Latin",
+        "Lesson": [
+            "All",
+            "Week 2 - Lesson 3"
+        ]
+    },
+    {
+        "page_front": 1,
+        "page_back": 2,
+        "row": 1,
+        "front_col": 0,
+        "is_card": true,
+        "morpheme": "mand",
+        "unit_label": "L1 U2",
+        "color": "#ff1c4d",
+        "definition": "to order",
+        "origin": "Latin root",
+        "note": null,
+        "index": 48,
+        "front_has_icon": false,
+        "back_has_icon": false,
+        "icon_types": [],
+        "level": "L1",
+        "unit": "U2",
+        "word_type": "root",
+        "word_origin": "Latin",
+        "Lesson": [
+            "All",
+            "Week 1 - Lesson 3"
+        ]
+    },
+    {
+        "page_front": 1,
+        "page_back": 2,
+        "row": 1,
+        "front_col": 1,
+        "is_card": true,
+        "morpheme": "vis",
+        "unit_label": "L1 U2",
+        "color": "#ff1c4d",
+        "definition": "to see",
+        "origin": "Latin root",
+        "note": "alternate form of vis(e), vid, vid(e)",
+        "index": 54,
+        "front_has_icon": true,
+        "back_has_icon": true,
+        "icon_types": [
+            "alternate"
+        ],
+        "level": "L1",
+        "unit": "U2",
+        "word_type": "root",
+        "word_origin": "Latin",
+        "Lesson": [
+            "All",
+            "Week 2 - Lesson 3"
+        ]
+    },
+    {
+        "page_front": 1,
+        "page_back": 2,
+        "row": 2,
+        "front_col": 0,
+        "is_card": true,
+        "morpheme": "man",
+        "unit_label": "L1 U2",
+        "color": "#ff1c4d",
+        "definition": "hand",
+        "origin": "Latin root",
+        "note": null,
+        "index": 49,
+        "front_has_icon": false,
+        "back_has_icon": false,
+        "icon_types": [],
+        "level": "L1",
+        "unit": "U2",
+        "word_type": "root",
+        "word_origin": "Latin",
+        "Lesson": [
+            "All",
+            "Week 1 - Lesson 3"
+        ]
+    },
+    {
+        "page_front": 1,
+        "page_back": 2,
+        "row": 2,
+        "front_col": 1,
+        "is_card": true,
+        "morpheme": "vide",
+        "unit_label": "L1 U2",
+        "color": "#ff1c4d",
+        "definition": "to see",
+        "origin": "Latin root",
+        "note": "alternate form of vid, vis, vis(e)",
+        "index": 55,
+        "front_has_icon": true,
+        "back_has_icon": true,
+        "icon_types": [
+            "alternate"
+        ],
+        "level": "L1",
+        "unit": "U2",
+        "word_type": "root",
+        "word_origin": "Latin",
+        "Lesson": [
+            "All",
+            "Week 2 - Lesson 3"
+        ]
+    },
+    {
+        "page_front": 1,
+        "page_back": 2,
+        "row": 3,
+        "front_col": 0,
+        "is_card": true,
+        "morpheme": "date",
+        "unit_label": "L1 U2",
+        "color": "#ff1c4d",
+        "definition": "to give",
+        "origin": "Latin suffix",
+        "note": null,
+        "index": 50,
+        "front_has_icon": false,
+        "back_has_icon": false,
+        "icon_types": [],
+        "level": "L1",
+        "unit": "U2",
+        "word_type": "suffix",
+        "word_origin": "Latin",
+        "Lesson": [
+            "All",
+            "Week 1 - Lesson 3"
+        ]
+    },
+    {
+        "page_front": 1,
+        "page_back": 2,
+        "row": 3,
+        "front_col": 1,
+        "is_card": true,
+        "morpheme": "vid",
+        "unit_label": "L1 U2",
+        "color": "#ff1c4d",
+        "definition": "to see",
+        "origin": "Latin root",
+        "note": "alternate form of vid(e), vis, vis(e)",
+        "index": 56,
+        "front_has_icon": true,
+        "back_has_icon": true,
+        "icon_types": [
+            "alternate"
+        ],
+        "level": "L1",
+        "unit": "U2",
+        "word_type": "root",
+        "word_origin": "Latin",
+        "Lesson": [
+            "All",
+            "Week 2 - Lesson 3"
+        ]
+    },
+    {
+        "page_front": 1,
+        "page_back": 2,
+        "row": 4,
+        "front_col": 0,
+        "is_card": true,
+        "morpheme": "counter",
+        "unit_label": "L1 U2",
+        "color": "#ff1c4d",
+        "definition": "against",
+        "origin": "Latin prefix",
+        "note": null,
+        "index": 51,
+        "front_has_icon": false,
+        "back_has_icon": false,
+        "icon_types": [],
+        "level": "L1",
+        "unit": "U2",
+        "word_type": "prefix",
+        "word_origin": "Latin",
+        "Lesson": [
+            "All",
+            "Week 1 - Lesson 3"
+        ]
+    },
+    {
+        "page_front": 1,
+        "page_back": 2,
+        "row": 4,
+        "front_col": 1,
+        "is_card": true,
+        "morpheme": "bio",
+        "unit_label": "L1 U2",
+        "color": "#0069ca",
+        "definition": "life",
+        "origin": "Greek combining form",
+        "note": null,
+        "index": 57,
+        "front_has_icon": false,
+        "back_has_icon": false,
+        "icon_types": [],
+        "level": "L1",
+        "unit": "U2",
+        "word_type": "combining form",
+        "word_origin": "Greek",
+        "Lesson": [
+            "All",
+            "Week 7 - Lesson 4",
+            "Week 3 - Lesson 4"
+        ]
+    },
+    {
+        "page_front": 1,
+        "page_back": 2,
+        "row": 5,
+        "front_col": 0,
+        "is_card": true,
+        "morpheme": "super",
+        "unit_label": "L1 U2",
+        "color": "#ff1c4d",
+        "definition": "over",
+        "origin": "Latin prefix",
+        "note": null,
+        "index": 52,
+        "front_has_icon": false,
+        "back_has_icon": false,
+        "icon_types": [],
+        "level": "L1",
+        "unit": "U2",
+        "word_type": "prefix",
+        "word_origin": "Latin",
+        "Lesson": [
+            "All",
+            "Week 2 - Lesson 3"
+        ]
+    },
+    {
+        "page_front": 1,
+        "page_back": 2,
+        "row": 5,
+        "front_col": 1,
+        "is_card": true,
+        "morpheme": "logy",
+        "unit_label": "L1 U2",
+        "color": "#0069ca",
+        "definition": "study of",
+        "origin": "Greek combining form",
+        "note": null,
+        "index": 58,
+        "front_has_icon": false,
+        "back_has_icon": false,
+        "icon_types": [],
+        "level": "L1",
+        "unit": "U2",
+        "word_type": "combining form",
+        "word_origin": "Greek",
+        "Lesson": [
+            "All",
+            "Week 7 - Lesson 4",
+            "Week 3 - Lesson 4"
+        ]
+    },
+    {
+        "page_front": 3,
+        "page_back": 4,
+        "row": 0,
+        "front_col": 0,
+        "is_card": true,
+        "morpheme": "graphy",
+        "unit_label": "L1 U2",
+        "color": "#0069ca",
+        "definition": "a writing, drawing, or picture of",
+        "origin": "Greek combining form",
+        "note": "alternate form of graph",
+        "index": 59,
+        "front_has_icon": true,
+        "back_has_icon": true,
+        "icon_types": [
+            "alternate"
+        ],
+        "level": "L1",
+        "unit": "U2",
+        "word_type": "combining form",
+        "word_origin": "Greek",
+        "Lesson": [
+            "All",
+            "Week 7 - Lesson 4",
+            "Week 3 - Lesson 4"
+        ]
+    },
+    {
+        "page_front": 3,
+        "page_back": 4,
+        "row": 0,
+        "front_col": 1,
+        "is_card": true,
+        "morpheme": "di",
+        "unit_label": "L1 U2",
+        "color": "#ff1c4d",
+        "definition": "away, apart",
+        "origin": "Latin prefix",
+        "note": "chameleon with dis-",
+        "index": 65,
+        "front_has_icon": true,
+        "back_has_icon": true,
+        "icon_types": [
+            "chameleon"
+        ],
+        "level": "L1",
+        "unit": "U2",
+        "word_type": "prefix",
+        "word_origin": "Latin",
+        "Lesson": [
+            "All",
+            "Week 4 - Lesson 3"
+        ]
+    },
+    {
+        "page_front": 3,
+        "page_back": 4,
+        "row": 1,
+        "front_col": 0,
+        "is_card": true,
+        "morpheme": "geo",
+        "unit_label": "L1 U2",
+        "color": "#0069ca",
+        "definition": "earth",
+        "origin": "Greek combining form",
+        "note": null,
+        "index": 60,
+        "front_has_icon": false,
+        "back_has_icon": false,
+        "icon_types": [],
+        "level": "L1",
+        "unit": "U2",
+        "word_type": "combining form",
+        "word_origin": "Greek",
+        "Lesson": [
+            "All",
+            "Week 7 - Lesson 4",
+            "Week 3 - Lesson 4"
+        ]
+    },
+    {
+        "page_front": 3,
+        "page_back": 4,
+        "row": 1,
+        "front_col": 1,
+        "is_card": true,
+        "morpheme": "angle",
+        "unit_label": "L1 U2",
+        "color": "#ff1c4d",
+        "definition": "angle or corner",
+        "origin": "Latin suffix",
+        "note": null,
+        "index": 66,
+        "front_has_icon": false,
+        "back_has_icon": false,
+        "icon_types": [],
+        "level": "L1",
+        "unit": "U2",
+        "word_type": "suffix",
+        "word_origin": "Latin",
+        "Lesson": [
+            "All",
+            "Week 4 - Lesson 3"
+        ]
+    },
+    {
+        "page_front": 3,
+        "page_back": 4,
+        "row": 2,
+        "front_col": 0,
+        "is_card": true,
+        "morpheme": "graph",
+        "unit_label": "L1 U2",
+        "color": "#0069ca",
+        "definition": "a writing, drawing, or picture of",
+        "origin": "Greek combining form",
+        "note": "alternate form of graphy",
+        "index": 61,
+        "front_has_icon": true,
+        "back_has_icon": true,
+        "icon_types": [
+            "alternate"
+        ],
+        "level": "L1",
+        "unit": "U2",
+        "word_type": "combining form",
+        "word_origin": "Greek",
+        "Lesson": [
+            "All",
+            "Week 7 - Lesson 4",
+            "Week 3 - Lesson 4"
+        ]
+    },
+    {
+        "page_front": 3,
+        "page_back": 4,
+        "row": 2,
+        "front_col": 1,
+        "is_card": true,
+        "morpheme": "ular",
+        "unit_label": "L1 U2",
+        "color": "#ff1c4d",
+        "definition": "having the nature of, of the kind of",
+        "origin": "Latin suffix",
+        "note": null,
+        "index": 67,
+        "front_has_icon": false,
+        "back_has_icon": false,
+        "icon_types": [],
+        "level": "L1",
+        "unit": "U2",
+        "word_type": "suffix",
+        "word_origin": "Latin",
+        "Lesson": [
+            "All",
+            "Week 4 - Lesson 3"
+        ]
+    },
+    {
+        "page_front": 3,
+        "page_back": 4,
+        "row": 3,
+        "front_col": 0,
+        "is_card": true,
+        "morpheme": "auto",
+        "unit_label": "L1 U2",
+        "color": "#0069ca",
+        "definition": "self",
+        "origin": "Greek combining form",
+        "note": null,
+        "index": 62,
+        "front_has_icon": false,
+        "back_has_icon": false,
+        "icon_types": [],
+        "level": "L1",
+        "unit": "U2",
+        "word_type": "combining form",
+        "word_origin": "Greek",
+        "Lesson": [
+            "All",
+            "Week 7 - Lesson 4",
+            "Week 3 - Lesson 4"
+        ]
+    },
+    {
+        "page_front": 3,
+        "page_back": 4,
+        "row": 3,
+        "front_col": 1,
+        "is_card": true,
+        "morpheme": "e",
+        "unit_label": "L1 U2",
+        "color": "#ff1c4d",
+        "definition": "up, out of",
+        "origin": "Latin prefix",
+        "note": null,
+        "index": 68,
+        "front_has_icon": false,
+        "back_has_icon": false,
+        "icon_types": [],
+        "level": "L1",
+        "unit": "U2",
+        "word_type": "prefix",
+        "word_origin": "Latin",
+        "Lesson": [
+            "All",
+            "Week 6 - Lesson 3",
+            "Week 7 - Lesson 4",
+            "Week 8 - Lesson 4",
+            "Week 4 - Lesson 3"
+        ]
+    },
+    {
+        "page_front": 3,
+        "page_back": 4,
+        "row": 4,
+        "front_col": 0,
+        "is_card": true,
+        "morpheme": "cor",
+        "unit_label": "L1 U2",
+        "color": "#ff1c4d",
+        "definition": "with, together",
+        "origin": "Latin prefix",
+        "note": "chameleon with con-, com-",
+        "index": 63,
+        "front_has_icon": true,
+        "back_has_icon": true,
+        "icon_types": [
+            "chameleon"
+        ],
+        "level": "L1",
+        "unit": "U2",
+        "word_type": "prefix",
+        "word_origin": "Latin",
+        "Lesson": [
+            "All",
+            "Week 4 - Lesson 3"
+        ]
+    },
+    {
+        "page_front": 3,
+        "page_back": 4,
+        "row": 4,
+        "front_col": 1,
+        "is_card": true,
+        "morpheme": "duce",
+        "unit_label": "L1 U2",
+        "color": "#ff1c4d",
+        "definition": "to lead, bring forward",
+        "origin": "Latin root",
+        "note": "alternate form of duct",
+        "index": 69,
+        "front_has_icon": true,
+        "back_has_icon": true,
+        "icon_types": [
+            "alternate"
+        ],
+        "level": "L1",
+        "unit": "U2",
+        "word_type": "root",
+        "word_origin": "Latin",
+        "Lesson": [
+            "All",
+            "Week 5 - Lesson 4"
+        ]
+    },
+    {
+        "page_front": 3,
+        "page_back": 4,
+        "row": 5,
+        "front_col": 0,
+        "is_card": true,
+        "morpheme": "rect",
+        "unit_label": "L1 U2",
+        "color": "#ff1c4d",
+        "definition": "to put or keep straight",
+        "origin": "Latin root",
+        "note": null,
+        "index": 64,
+        "front_has_icon": false,
+        "back_has_icon": false,
+        "icon_types": [],
+        "level": "L1",
+        "unit": "U2",
+        "word_type": "root",
+        "word_origin": "Latin",
+        "Lesson": [
+            "All",
+            "Week 4 - Lesson 3"
+        ]
+    },
+    {
+        "page_front": 3,
+        "page_back": 4,
+        "row": 5,
+        "front_col": 1,
+        "is_card": true,
+        "morpheme": "duct",
+        "unit_label": "L1 U2",
+        "color": "#ff1c4d",
+        "definition": "to lead, bring forward",
+        "origin": "Latin root",
+        "note": "alternate form of duce",
+        "index": 70,
+        "front_has_icon": true,
+        "back_has_icon": true,
+        "icon_types": [
+            "alternate"
+        ],
+        "level": "L1",
+        "unit": "U2",
+        "word_type": "root",
+        "word_origin": "Latin",
+        "Lesson": [
+            "All",
+            "Week 5 - Lesson 4"
+        ]
+    },
+    {
+        "page_front": 5,
+        "page_back": 6,
+        "row": 0,
+        "front_col": 0,
+        "is_card": true,
+        "morpheme": "kilo",
+        "unit_label": "L1 U2",
+        "color": "#0069ca",
+        "definition": "thousand",
+        "origin": "Greek combining form",
+        "note": null,
+        "index": 71,
+        "front_has_icon": false,
+        "back_has_icon": false,
+        "icon_types": [],
+        "level": "L1",
+        "unit": "U2",
+        "word_type": "combining form",
+        "word_origin": "Greek",
+        "Lesson": [
+            "All",
+            "Week 6 - Lesson 3",
+            "Week 6 - Lesson 4"
+        ]
+    },
+    {
+        "page_front": 5,
+        "page_back": 6,
+        "row": 0,
+        "front_col": 1,
+        "is_card": true,
+        "morpheme": "cede",
+        "unit_label": "L1 U2",
+        "color": "#ff1c4d",
+        "definition": "to give way, yield",
+        "origin": "Latin root",
+        "note": "alternate form of cess, ceed",
+        "index": 77,
+        "front_has_icon": true,
+        "back_has_icon": true,
+        "icon_types": [
+            "alternate"
+        ],
+        "level": "L1",
+        "unit": "U2",
+        "word_type": "root",
+        "word_origin": "Latin",
+        "Lesson": [
+            "All",
+            "Week 7 - Lesson 4",
+            "Week 8 - Lesson 4"
+        ]
+    },
+    {
+        "page_front": 5,
+        "page_back": 6,
+        "row": 1,
+        "front_col": 0,
+        "is_card": true,
+        "morpheme": "meter",
+        "unit_label": "L1 U2",
+        "color": "#0069ca",
+        "definition": "measure; measuring device",
+        "origin": "Greek combining form",
+        "note": null,
+        "index": 72,
+        "front_has_icon": false,
+        "back_has_icon": false,
+        "icon_types": [],
+        "level": "L1",
+        "unit": "U2",
+        "word_type": "combining form",
+        "word_origin": "Greek",
+        "Lesson": [
+            "All",
+            "Week 6 - Lesson 3",
+            "Week 6 - Lesson 4"
+        ]
+    },
+    {
+        "page_front": 5,
+        "page_back": 6,
+        "row": 1,
+        "front_col": 1,
+        "is_card": true,
+        "morpheme": "inter",
+        "unit_label": "L1 U2",
+        "color": "#ff1c4d",
+        "definition": "between",
+        "origin": "Latin prefix",
+        "note": null,
+        "index": 78,
+        "front_has_icon": false,
+        "back_has_icon": false,
+        "icon_types": [],
+        "level": "L1",
+        "unit": "U2",
+        "word_type": "prefix",
+        "word_origin": "Latin",
+        "Lesson": [
+            "All",
+            "Week 7 - Lesson 4",
+            "Week 8 - Lesson 4"
+        ]
+    },
+    {
+        "page_front": 5,
+        "page_back": 6,
+        "row": 2,
+        "front_col": 0,
+        "is_card": true,
+        "morpheme": "milli",
+        "unit_label": "L1 U2",
+        "color": "#ff1c4d",
+        "definition": "thousand",
+        "origin": "Latin root",
+        "note": null,
+        "index": 73,
+        "front_has_icon": false,
+        "back_has_icon": false,
+        "icon_types": [],
+        "level": "L1",
+        "unit": "U2",
+        "word_type": "root",
+        "word_origin": "Latin",
+        "Lesson": [
+            "All",
+            "Week 6 - Lesson 3",
+            "Week 6 - Lesson 4"
+        ]
+    },
+    {
+        "page_front": 5,
+        "page_back": 6,
+        "row": 2,
+        "front_col": 1,
+        "is_card": true,
+        "morpheme": "scribe",
+        "unit_label": "L1 U2",
+        "color": "#ff1c4d",
+        "definition": "to write",
+        "origin": "Latin root",
+        "note": "alternate form of script",
+        "index": 79,
+        "front_has_icon": true,
+        "back_has_icon": true,
+        "icon_types": [
+            "alternate"
+        ],
+        "level": "L1",
+        "unit": "U2",
+        "word_type": "root",
+        "word_origin": "Latin",
+        "Lesson": [
+            "All",
+            "Week 8 - Lesson 4"
+        ]
+    },
+    {
+        "page_front": 5,
+        "page_back": 6,
+        "row": 3,
+        "front_col": 0,
+        "is_card": true,
+        "morpheme": "gram",
+        "unit_label": "L1 U2",
+        "color": "#0069ca",
+        "definition": "small weight",
+        "origin": "Greek combining form",
+        "note": null,
+        "index": 74,
+        "front_has_icon": false,
+        "back_has_icon": false,
+        "icon_types": [],
+        "level": "L1",
+        "unit": "U2",
+        "word_type": "combining form",
+        "word_origin": "Greek",
+        "Lesson": [
+            "All",
+            "Week 6 - Lesson 3",
+            "Week 6 - Lesson 4"
+        ]
+    },
+    {
+        "page_front": 5,
+        "page_back": 6,
+        "row": 3,
+        "front_col": 1,
+        "is_card": true,
+        "morpheme": "script",
+        "unit_label": "L1 U2",
+        "color": "#ff1c4d",
+        "definition": "to write",
+        "origin": "Latin root",
+        "note": "alternate form of scribe",
+        "index": 80,
+        "front_has_icon": true,
+        "back_has_icon": true,
+        "icon_types": [
+            "alternate"
+        ],
+        "level": "L1",
+        "unit": "U2",
+        "word_type": "root",
+        "word_origin": "Latin",
+        "Lesson": [
+            "All",
+            "Week 8 - Lesson 4"
+        ]
+    },
+    {
+        "page_front": 5,
+        "page_back": 6,
+        "row": 4,
+        "front_col": 0,
+        "is_card": true,
+        "morpheme": "micro",
+        "unit_label": "L1 U2",
+        "color": "#0069ca",
+        "definition": "small",
+        "origin": "Greek combining form",
+        "note": null,
+        "index": 75,
+        "front_has_icon": false,
+        "back_has_icon": false,
+        "icon_types": [],
+        "level": "L1",
+        "unit": "U2",
+        "word_type": "combining form",
+        "word_origin": "Greek",
+        "Lesson": [
+            "All",
+            "Week 6 - Lesson 4"
+        ]
+    },
+    {
+        "page_front": 5,
+        "page_back": 6,
+        "row": 4,
+        "front_col": 1,
+        "is_card": true,
+        "morpheme": "post",
+        "unit_label": "L1 U2",
+        "color": "#ff1c4d",
+        "definition": "after",
+        "origin": "Latin prefix",
+        "note": null,
+        "index": 81,
+        "front_has_icon": false,
+        "back_has_icon": false,
+        "icon_types": [],
+        "level": "L1",
+        "unit": "U2",
+        "word_type": "prefix",
+        "word_origin": "Latin",
+        "Lesson": [
+            "All",
+            "Week 8 - Lesson 4"
+        ]
+    },
+    {
+        "page_front": 5,
+        "page_back": 6,
+        "row": 5,
+        "front_col": 0,
+        "is_card": true,
+        "morpheme": "pre",
+        "unit_label": "L1 U2",
+        "color": "#ff1c4d",
+        "definition": "before",
+        "origin": "Latin prefix",
+        "note": null,
+        "index": 76,
+        "front_has_icon": false,
+        "back_has_icon": false,
+        "icon_types": [],
+        "level": "L1",
+        "unit": "U2",
+        "word_type": "prefix",
+        "word_origin": "Latin",
+        "Lesson": [
+            "All",
+            "Week 7 - Lesson 4",
+            "Week 8 - Lesson 4"
+        ]
+    },
+    {
+        "page_front": 5,
+        "page_back": 6,
+        "row": 5,
+        "front_col": 1,
+        "is_card": true,
+        "morpheme": "cess",
+        "unit_label": "L1 U2",
+        "color": "#ff1c4d",
+        "definition": "to give way, yield",
+        "origin": "Latin root",
+        "note": "alternate form of cede, ceed",
+        "index": 82,
+        "front_has_icon": true,
+        "back_has_icon": true,
+        "icon_types": [
+            "alternate"
+        ],
+        "level": "L1",
+        "unit": "U2",
+        "word_type": "root",
+        "word_origin": "Latin",
+        "Lesson": [
+            "All"
+        ]
+    },
+    {
+        "page_front": 7,
+        "page_back": 8,
+        "row": 0,
+        "front_col": 0,
+        "is_card": true,
+        "morpheme": "ceed",
+        "unit_label": "L1 U2",
+        "color": "#ff1c4d",
+        "definition": "to give way, yield",
+        "origin": "Latin root",
+        "note": "alternate form of cede, cess",
+        "index": 83,
+        "front_has_icon": true,
+        "back_has_icon": true,
+        "icon_types": [
+            "alternate"
+        ],
+        "level": "L1",
+        "unit": "U2",
+        "word_type": "root",
+        "word_origin": "Latin",
+        "Lesson": [
+            "All"
         ]
     }
 ]

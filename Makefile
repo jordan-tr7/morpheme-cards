@@ -5,11 +5,18 @@ environment:
 go:
 	cd morpheme-cards && npm run dev
 
-parse_pdfs: 
-	python3 parse_pdfs.py
+update: final_json
 
-lessons:
+final_json: lessons
+	@echo "Adding final lesson details to JSON..."
+	python3 update_card_json.py
+
+lessons: parse_pdfs
+	@echo "Getting lesson details..."
 	python3 parse_pdf_lessons.py
 
-update_json:
-	python3 update_card_json.py
+parse_pdfs: 
+	@echo "Getting morpheme card details..."
+	python3 parse_pdfs.py
+
+
